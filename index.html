@@ -1,99 +1,186 @@
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Login</title>
 
+    <!-- INTERNAL CSS -->
     <style>
-        body {
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
         }
 
+        body {
+            background-color: white;
+            min-height: 100vh;
+        }
+
+        /* Kotak Login */
         .login-container {
             width: 350px;
             max-width: 90%;
             margin: 100px auto;
-            padding: 25px;
-            background-color: cornsilk;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px #ccc;
-            box-sizing: border-box;
+            padding: 35px;
+            background-color: #c8b5f2;
+            border-radius: 35px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        h2, p {
-            text-align: center;
+        /* Judul */
+        h2 {
+            color: #171717;
+            font-size: 20px;
+            margin-bottom: 22px;
         }
 
+        /* Label */
+        label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: #171717;
+        }
+
+        /* Input Username dan Password */
         input[type="text"],
         input[type="password"] {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            box-sizing: border-box;
-            border: 1px solid #aaa;
-            border-radius: 5px;
+            margin-bottom: 18px;
+            background-color: white;
+            border: 1px solid #cccccc;
+            border-radius: 0;
+            font-size: 13px;
         }
 
-        input[type="checkbox"] {
-            margin: 10px 5px 15px 0;
+        /* Efek Input */
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #7655a8;
         }
 
+        /* Checkbox */
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .remember input {
+            margin: 0;
+        }
+
+        .remember label {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        /* Tombol Login */
         button[type="submit"] {
             width: 100%;
-            padding: 12px;
-            background-color: blue;
+            padding: 10px;
+            background-color: #252525;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
+            font-size: 13px;
             cursor: pointer;
         }
 
-        button:hover {
-            background-color: darkblue;
+        /* Efek Hover */
+        button[type="submit"]:hover {
+            background-color: #444444;
         }
 
+        /* Forgot Password */
+        .forgot {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 13px;
+        }
+
+        /* SignUp */
+        .signup {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 13px;
+        }
+
+        /* Link */
         a {
+            color: #333333;
             text-decoration: underline;
         }
 
+        /* Responsif HP */
         @media (max-width: 600px) {
             .login-container {
                 width: 90%;
                 margin: 50px auto;
+                padding: 30px;
             }
 
-            input, button {
+            input[type="text"],
+            input[type="password"],
+            button[type="submit"] {
                 font-size: 16px;
             }
         }
+
     </style>
 </head>
 
 <body>
 
     <div class="login-container">
-        <h2>Login</h2>
+
+        <h2>Please Login in Here!</h2>
 
         <form>
-            <label>Username</label>
-            <input type="text" placeholder="Masukkan username" required>
 
-            <label>Password</label>
-            <input type="password" placeholder="Masukkan password" required>
+            <label for="username">Username</label>
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                required
+            >
 
-            <label>
-                <input type="checkbox"> Ingat Saya
-            </label>
+            <label for="password">Password :</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
+
+            <div class="remember">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
 
             <button type="submit">Login</button>
+
+            <p class="forgot">
+                <a href="#">Forgot Password ?</a>
+            </p>
+
+            <p class="signup">
+                Not a member?
+                <a href="#">SignUp now.</a>
+            </p>
+
         </form>
 
-        <p><a href="#">Lupa Password?</a></p>
-        <p>Belum punya akun? <a href="#">Daftar</a></p>
     </div>
 
 </body>
-  </html>
-  
+</html>
